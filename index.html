@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Amol Barbade • Portfolio</title>
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons (optional for icons) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    :root {
+      --tech-blue: #2186eb;
+      --tech-cyan: #08b6c1;
+      --tech-slate: #232d3a;
+      --tech-gray: #64748b;
+      --slate-50: #f8fafc;
+      --white-90: rgba(255,255,255,0.9);
+    }
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: var(--slate-50);
+      color: var(--tech-gray);
+    }
+    .navbar-brand .brand-initials {
+      color: var(--tech-blue);
+      font-size: 2rem;
+      font-weight: bold;
+      margin-right: .5rem;
+    }
+    .navbar-brand .brand-name {
+      color: var(--tech-slate);
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .hero-title { color: var(--tech-slate); }
+    .hero-role  { color: var(--tech-blue); }
+    .hero-intro { color: var(--tech-gray); }
+    .section-title { color: var(--tech-slate); }
+    .custom-btn-main {
+      background: var(--tech-blue);
+      color: #fff;
+      font-weight: 600;
+    }
+    .custom-btn-main:hover { background: #1976d2; }
+    .custom-btn-outline {
+      border: 2px solid var(--tech-blue);
+      color: var(--tech-blue);
+      background: #fff;
+      font-weight: 600;
+    }
+    .custom-btn-outline:hover {
+      background: var(--tech-blue);
+      color: #fff;
+      border-color: var(--tech-blue);
+    }
+    .section-bg-white { background: #fff; }
+    .section-bg-slate { background: var(--slate-50); }
+    .rounded-2xl { border-radius: 1rem !important; }
+    .shadow-xl { box-shadow: 0 0.75rem 1.5rem rgba(0,0,0,0.15)!important; }
+    .icon-circle-bg {
+      width: 3rem; height: 3rem;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--tech-blue);
+      color: #fff; font-size: 1.5rem;
+      margin-right: 1rem;
+    }
+    .icon-link { color: var(--tech-gray); font-size: 1.7rem; margin-right: .7rem; transition: color 0.2s;}
+    .icon-link:hover { color: var(--tech-blue); }
+    .stats-box {
+      background: #fff;
+      border-radius: .8rem;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+      padding: 1.5rem;
+    }
+    .stats-num { font-size: 2rem; font-weight: bold; color: var(--tech-blue);}
+    .stats-label { color: var(--tech-gray); font-weight: 500;}
+    .skills-bullet { font-weight: 600; color: var(--tech-blue);}
+    .skill-dot.filled { background: var(--tech-blue); }
+    .skill-dot { display: inline-block; width: .9rem; height: .9rem; border-radius: 50%; margin-right:.15rem; background: var(--tech-blue); }
+    .skill-dot.unfilled { background: #e5e7eb; }
+    .project-card:hover { box-shadow: 0 1.5rem 2rem rgba(33,134,235,0.12); transform: translateY(-4px); }
+    .footer-bg { background: var(--tech-slate); color: #fff;}
+    .footer-link { color: #eee; }
+    .footer-link:hover { color: var(--tech-cyan);}
+    /* Extra custom classes for icons/colors from original Tailwind palette may be added here */
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm py-2" style="backdrop-filter: blur(8px);">
+  <div class="container-xl">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <span class="brand-initials">AB</span>
+      <span class="brand-name">Amol Barbade</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-3">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="min-vh-100 d-flex align-items-center section-bg-slate pt-5" style="background: linear-gradient(135deg, var(--slate-50), #e3f0fa 90%);">
+  <div class="container-xl py-5">
+    <div class="row align-items-center gy-5 gx-5">
+      <!-- Hero Text -->
+      <div class="col-lg-6">
+        <div class="mb-4 text-tech-cyan fs-5 fw-medium">Hello, I'm</div>
+        <h1 class="hero-title display-4 fw-bold mb-3">Amol Barbade</h1>
+        <h2 class="hero-role fs-2 fw-semibold mb-4">Full Stack Developer</h2>
+        <p class="hero-intro fs-5 mb-4">Passionate full-stack developer with 2+ years of experience building modern web applications. Specializing in frontend and backend technologies with a focus on creating scalable, user-friendly solutions.</p>
+        <div class="d-flex flex-wrap gap-3 mb-4">
+          <a href="#projects" class="btn custom-btn-main px-4 py-2 shadow">View My Work</a>
+          <a href="#contact" class="btn custom-btn-outline px-4 py-2">Get In Touch</a>
+        </div>
+        <div class="d-flex gap-4">
+          <a href="https://linkedin.com/" class="icon-link" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="https://github.com/" class="icon-link" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+          <a href="mailto:barbade21@gmail.com" class="icon-link" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+        </div>
+      </div>
+      <!-- Hero Image & Experience -->
+      <div class="col-lg-6 position-relative">
+        <img src="./data/photo-1551650975-87deedd944c3" alt="Professional developer workspace" class="rounded-2xl shadow-xl img-fluid w-100 mb-4">
+        <div class="position-absolute bg-white rounded-3 shadow p-4" style="bottom:-1.5rem; right:-1.5rem;">
+          <div class="text-center">
+            <div class="stats-num">2+</div>
+            <div class="stats-label">Years Experience</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-4 section-bg-white">
+  <div class="container-xl">
+    <div class="text-center mb-4">
+      <h2 class="section-title display-6 fw-bold mb-3">About Me</h2>
+      <p class="fs-4 text-tech-gray mb-0">Dedicated to crafting exceptional digital experiences through clean code and innovative solutions</p>
+    </div>
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <h3 class="fs-3 fw-semibold mb-3">My Journey</h3>
+        <p class="fs-5 mb-2">With over 2 years of hands-on experience in full-stack development, I've had the privilege of working on diverse projects that span from dynamic frontend interfaces to robust backend systems.</p>
+        <p class="fs-5 mb-4">My expertise lies in creating seamless user experiences while ensuring scalable and maintainable code architecture. I'm passionate about staying current with the latest technologies and best practices in web development.</p>
+        <div class="row row-cols-2 gy-4">
+          <div class="col">
+            <div class="stats-box text-center">
+              <div class="stats-num">2+</div>
+              <div class="stats-label">Years Experience</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="stats-box text-center">
+              <div class="stats-num" style="color:var(--tech-cyan)">10+</div>
+              <div class="stats-label">Projects Completed</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="stats-box text-center">
+              <div class="stats-num">15+</div>
+              <div class="stats-label">Technologies</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="stats-box text-center">
+              <div class="stats-num" style="color:var(--tech-cyan)">100%</div>
+              <div class="stats-label">Client Satisfaction</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <img src="./data/photo-1522071820081-009f0129c71c" alt="Development team collaborating" class="rounded-3 shadow w-100 mb-4">
+        <div class="bg-light rounded-3 p-4">
+          <h4 class="fs-5 fw-semibold mb-3">What I Bring to the Table</h4>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2 d-flex align-items-center"><i class="bi bi-check-circle-fill me-2 text-info"></i> Full-stack development expertise</li>
+            <li class="mb-2 d-flex align-items-center"><i class="bi bi-check-circle-fill me-2 text-info"></i> Modern frontend frameworks</li>
+            <li class="mb-2 d-flex align-items-center"><i class="bi bi-check-circle-fill me-2 text-info"></i> Scalable backend solutions</li>
+            <li class="mb-2 d-flex align-items-center"><i class="bi bi-check-circle-fill me-2 text-info"></i> Database design and optimization</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="py-4 section-bg-slate">
+  <div class="container-xl">
+    <div class="text-center mb-4">
+      <h2 class="section-title display-6 fw-bold mb-3">Technical Skills</h2>
+      <p class="fs-4 text-tech-gray mb-0">A comprehensive toolkit for building modern web applications from frontend to backend</p>
+    </div>
+    <div class="row g-4">
+      <!-- Frontend Skills -->
+      <div class="col-lg-4">
+        <div class="bg-white p-5 rounded-3 shadow-xl h-100">
+          <div class="text-center mb-4">
+            <div class="icon-circle-bg mb-2"><i class="bi bi-laptop"></i></div>
+            <h3 class="fs-4 fw-semibold mb-2">Frontend Development</h3>
+          </div>
+          <div>
+            <!-- Skill Row (sample) -->
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="fw-medium">HTML5</span>
+              <span>
+                <span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span>
+              </span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="fw-medium">CSS3</span>
+              <span>
+                <span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span>
+              </span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="fw-medium">JavaScript</span>
+              <span>
+                <span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot unfilled"></span>
+              </span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="fw-medium">jQuery</span>
+              <span>
+                <span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot unfilled"></span>
+              </span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="fw-medium">Bootstrap</span>
+              <span>
+                <span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot unfilled"></span>
+              </span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="fw-medium">Node.js</span>
+              <span>
+                <span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot unfilled"></span>
+              </span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="fw-medium">Angular</span>
+              <span>
+                <span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot filled"></span><span class="skill-dot unfilled"></span><span class="skill-dot unfilled"></span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Backend Skills -->
+      <div class="col-lg-4">
+        <div class="bg-white p-5 rounded-3 shadow-xl h-100">
+          <div class="text-center mb-4">
+            <div class="icon-circle-bg mb-2" style="background:var(--tech-cyan)"><i class="bi bi-server"></i></div>
+            <h3 class="fs-4 fw-semibold mb-2">Backend Development</h3>
+          </div>
+          <div>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="fw-medium">C#</span>
+              <span>
+                <span class="skill-dot filled" style="background:var(--tech-cyan)"></span><span class="skill-dot filled" style="background:var(--tech-cyan)"></span><span class="skill-dot filled" style="background:var(--tech-cyan)"></span><span class="skill-dot filled" style="background:var(--tech-cyan)"></span><span class="skill-dot filled" style="background:var(--tech-cyan)"></span>
+              </span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="fw-medium">ADO.Net</span>
+              <span>
+                <span class="skill-dot filled" style="background:var(--tech-cyan)"></span><span class="skill-dot filled" style="background:var(--tech-cyan)"></span><span class="skill-dot filled" style="background:var(--tech-cyan)"></span><span class="skill-dot filled" style="background:var(--tech-cyan)"></span><span class="skill-dot filled" style="background:var(--tech-cyan)"></span>
+              </span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="fw-medium">ASP.Net</span>
+              <span>
+                <span class="skill-dot filled" style="background:var(--tech-cyan)"></span><span class="skill-dot filled" style="background:var(--tech-cyan)"></span><span class="skill-dot filled" style="background:var(--tech-cyan)"></span><span class="skill-dot unfilled" style="background:var(--tech-cyan)"></span><span class="skill-dot unfilled"></span>
+              </span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="fw-medium">MVC</span>
+              <span>
+                <span class="skill-dot filled" style="background:var(--tech-cyan)"></span><span class="skill-dot filled" style="background:var(--tech-cyan)"></span><span class="skill-dot filled" style="background:var(--tech-cyan)"></span><span class="skill-dot filled" style="background:var(--tech-cyan)"></span><span class="skill-dot unfilled"></span>
+              </span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="fw-medium">MVC Core</span>
+              <span>
+                <span class="skill-dot filled" style="background:var(--tech-cyan)"></span><span class="skill-dot filled" style="background:var(--tech-cyan)"></span><span class="skill-dot filled" style="background:var(--tech-cyan)"></span><span class="skill-dot unfilled" ></span><span class="skill-dot unfilled"></span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Tools & DB -->
+      <div class="col-lg-4">
+        <div class="bg-white p-5 rounded-3 shadow-xl h-100">
+          <div class="text-center mb-4">
+            <div class="icon-circle-bg mb-2" style="background:#dbf4e3;"><i class="bi bi-hammer" style="color:#17a765;"></i></div>
+            <h3 class="fs-4 fw-semibold mb-2">Tools & Database</h3>
+          </div>
+          <div>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+               <span class="fw-medium">SQL</span>
+              <span>
+                <span class="skill-dot filled" style="background:#17a765"></span><span class="skill-dot filled" style="background:#17a765"></span><span class="skill-dot filled" style="background:#17a765"></span><span class="skill-dot filled" style="background:#17a765"></span><span class="skill-dot filled" style="background:#17a765"></span>
+              </span>
+            </div>           
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="fw-medium">Visual Studio</span>
+              <span>
+                <span class="skill-dot filled" style="background:#17a765"></span><span class="skill-dot filled" style="background:#17a765"></span><span class="skill-dot filled" style="background:#17a765"></span><span class="skill-dot filled" style="background:#17a765"></span><span class="skill-dot filled" style="background:#17a765"></span>
+              </span>
+            </div>
+			 <div class="d-flex justify-content-between align-items-center mb-2">             
+			  <span class="fw-medium">GitHub</span>
+              <span>
+                <span class="skill-dot filled" style="background:#17a765"></span><span class="skill-dot filled" style="background:#17a765"></span><span class="skill-dot filled" style="background:#17a765"></span><span class="skill-dot unfilled" ></span><span class="skill-dot unfilled"></span>
+              </span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="fw-medium">Git</span>
+              <span>
+                <span class="skill-dot filled" style="background:#17a765"></span><span class="skill-dot filled" style="background:#17a765"></span><span class="skill-dot filled" style="background:#17a765"></span><span class="skill-dot unfilled" ></span><span class="skill-dot unfilled"></span>
+              </span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="fw-medium">REST APIs</span>
+              <span>
+                <span class="skill-dot filled" style="background:#17a765"></span><span class="skill-dot filled" style="background:#17a765"></span><span class="skill-dot filled" style="background:#17a765"></span><span class="skill-dot unfilled" style="background:#17a765"></span><span class="skill-dot unfilled"></span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-4 section-bg-white">
+  <div class="container-xl">
+    <div class="text-center mb-4">
+      <h2 class="section-title display-6 fw-bold mb-3">Featured Projects</h2>
+      <p class="fs-4 text-tech-gray mb-0">A selection of my recent work showcasing different aspects of full-stack development</p>
+    </div>
+    <div class="p-5 mb-5 rounded-4" style="background: linear-gradient(90deg, var(--tech-blue), var(--tech-cyan)); color: #fff;">
+      <div class="mx-auto text-center" style="max-width: 700px;">
+        <div class="bg-white bg-opacity-25 rounded-pill px-4 py-2 mb-3 d-inline-block">
+          <span class="fw-semibold small">Currently Working On</span>
+        </div>
+        <h3 class="fs-2 fw-bold mb-3">Enterprise Management System</h3>
+        <p class="fs-5 mb-4 opacity-75">Building a comprehensive enterprise management solution using ASP.NET Core MVC, Angular frontend, and SQL Server database with advanced reporting capabilities.</p>
+        <div class="d-flex justify-content-center flex-wrap gap-2 mb-0">
+          <span class="badge rounded-pill bg-light text-dark fw-semibold me-2">ASP.NET Core</span>
+          <span class="badge rounded-pill bg-light text-dark fw-semibold me-2">Angular</span>
+          <span class="badge rounded-pill bg-light text-dark fw-semibold me-2">SQL Server</span>
+          <span class="badge rounded-pill bg-light text-dark fw-semibold">Entity Framework</span>
+        </div>
+      </div>
+    </div>
+    <div class="row g-4">
+      <!-- Project 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="project-card bg-white rounded-3 shadow h-100 overflow-hidden d-flex flex-column">
+          <img src="./data/photo-1556742049-0cfed4f6a45d" alt="E-Commerce Platform" class="w-100 rounded-top-3" style="object-fit:cover; height: 12rem;">
+          <div class="p-4 flex-grow-1 d-flex flex-column">
+            <h3 class="fs-5 fw-semibold text-tech-slate mb-2">E-Commerce Platform</h3>
+            <p class="mb-3 text-tech-gray">Full-featured online shopping platform with user authentication, product catalog, shopping cart, and payment integration.</p>
+            <div class="mb-3 d-flex flex-wrap gap-1">
+              <span class="badge bg-primary bg-opacity-10 text-primary">ASP.NET MVC</span>
+              <span class="badge bg-success bg-opacity-10 text-success">jQuery</span>
+              <span class="badge bg-purple bg-opacity-10 text-purple">SQL Server</span>
+            </div>
+            <div class="mt-auto d-flex justify-content-between">
+              <a href="#" class="fw-medium text-decoration-none" style="color:var(--tech-blue)">Live Demo <i class="bi bi-box-arrow-up-right"></i></a>
+              <a href="#" class="fw-medium text-decoration-none text-tech-gray">Code <i class="bi bi-github"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Project 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="project-card bg-white rounded-3 shadow h-100 overflow-hidden d-flex flex-column">
+          <img src="./data/photo-1611224923853-80b023f02d71" alt="Task Management System" class="w-100 rounded-top-3" style="object-fit:cover; height: 12rem;">
+          <div class="p-4 flex-grow-1 d-flex flex-column">
+            <h3 class="fs-5 fw-semibold text-tech-slate mb-2">Task Management System</h3>
+            <p class="mb-3 text-tech-gray">Collaborative task management application with real-time updates, drag-and-drop interface, and team collaboration features.</p>
+            <div class="mb-3 d-flex flex-wrap gap-1">
+              <span class="badge bg-danger bg-opacity-10 text-danger">Angular</span>
+              <span class="badge bg-primary bg-opacity-10 text-primary">Node.js</span>
+              <span class="badge bg-warning bg-opacity-10 text-warning">Bootstrap</span>
+            </div>
+            <div class="mt-auto d-flex justify-content-between">
+              <a href="#" class="fw-medium text-decoration-none" style="color:var(--tech-blue)">Live Demo <i class="bi bi-box-arrow-up-right"></i></a>
+              <a href="#" class="fw-medium text-decoration-none text-tech-gray">Code <i class="bi bi-github"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Project 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="project-card bg-white rounded-3 shadow h-100 overflow-hidden d-flex flex-column">
+          <img src="./data/photo-1460925895917-afdab827c52f" alt="CRM Dashboard" class="w-100 rounded-top-3" style="object-fit:cover; height: 12rem;">
+          <div class="p-4 flex-grow-1 d-flex flex-column">
+            <h3 class="fs-5 fw-semibold text-tech-slate mb-2">CRM Dashboard</h3>
+            <p class="mb-3 text-tech-gray">Customer relationship management system with analytics dashboard, lead tracking, and automated reporting features.</p>
+            <div class="mb-3 d-flex flex-wrap gap-1">
+              <span class="badge bg-info bg-opacity-10 text-info">MVC Core</span>
+              <span class="badge bg-success bg-opacity-10 text-success">C#</span>
+              <span class="badge bg-warning bg-opacity-10 text-warning">ADO.Net</span>
+            </div>
+            <div class="mt-auto d-flex justify-content-between">
+              <a href="#" class="fw-medium text-decoration-none" style="color:var(--tech-blue)">Live Demo <i class="bi bi-box-arrow-up-right"></i></a>
+              <a href="#" class="fw-medium text-decoration-none text-tech-gray">Code <i class="bi bi-github"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Project 4 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="project-card bg-white rounded-3 shadow h-100 overflow-hidden d-flex flex-column">
+          <img src="./data/photo-1586953208448-b95a79798f07" alt="Inventory Management" class="w-100 rounded-top-3" style="object-fit:cover; height: 12rem;">
+          <div class="p-4 flex-grow-1 d-flex flex-column">
+            <h3 class="fs-5 fw-semibold text-tech-slate mb-2">Inventory Management</h3>
+            <p class="mb-3 text-tech-gray">Real-time inventory tracking system with barcode scanning, stock alerts, and comprehensive reporting dashboard.</p>
+            <div class="mb-3 d-flex flex-wrap gap-1">
+              <span class="badge bg-primary bg-opacity-10 text-primary">ASP.NET</span>
+              <span class="badge bg-purple bg-opacity-10 text-purple">JavaScript</span>
+              <span class="badge bg-pink bg-opacity-10 text-pink">SQL</span>
+            </div>
+            <div class="mt-auto d-flex justify-content-between">
+              <a href="#" class="fw-medium text-decoration-none" style="color:var(--tech-blue)">Live Demo <i class="bi bi-box-arrow-up-right"></i></a>
+              <a href="#" class="fw-medium text-decoration-none text-tech-gray">Code <i class="bi bi-github"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-2">
+      <a href="#" class="btn custom-btn-main px-4 py-2">View All Projects <i class="bi bi-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-2 section-bg-slate">
+  <div class="container-xl">
+    <div class="text-center mb-4">
+      <h2 class="section-title display-6 fw-bold mb-1">Get In Touch</h2>
+      <p class="fs-4 text-tech-gray mb-0">Let's discuss your next project or explore opportunities to work together</p>
+    </div>
+    <div class="row g-5">
+      <div class="col-lg-5">
+        <div class="mb-4">
+          <h3 class="fs-3 fw-semibold mb-4">Contact Information</h3>
+          <div class="mb-4 d-flex align-items-center">
+            <div class="icon-circle-bg bg-opacity-10 text-tech-blue"><i class="bi bi-envelope-fill"></i></div>
+            <div>
+              <div class="fw-medium">Email</div>
+              <a href="mailto:barbade21@gmail.com" class="text-decoration-none text-tech-blue">barbade21@gmail.com</a>
+            </div>
+          </div>
+          <div class="mb-4 d-flex align-items-center">
+            <div class="icon-circle-bg bg-opacity-10" style="background:var(--tech-cyan, #08b6c1);"><i class="bi bi-telephone-fill"></i></div>
+            <div>
+              <div class="fw-medium">Phone</div>
+              <a href="tel:8830317804" class="text-decoration-none text-tech-blue">+91 8830317804</a>
+            </div>
+          </div>
+          <div class="mb-4 d-flex align-items-center">
+            <div class="icon-circle-bg bg-opacity-10" style="background:#dbf4e3;"><i class="bi bi-geo-alt-fill" style="color:#17a765;"></i></div>
+            <div>
+              <div class="fw-medium">Location</div>
+              <span class="text-tech-slate">Pune, Maharashtra, India</span>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-3 shadow p-4 mb-4">
+          <h4 class="fs-5 fw-semibold mb-3">Download Resume</h4>
+          <p class="text-tech-gray mb-2">Get a detailed overview of my experience, skills, and projects.</p>
+          <a href="#" download class="btn custom-btn-main w-100"><i class="bi bi-download me-2"></i>Download CV</a>
+        </div>
+        <div class="mb-4 fs-5">
+          <h4 class="fs-5 fw-semibold mb-3">Connect With Me</h4>
+          <div class="d-flex gap-3">
+            <a href="https://linkedin.com/" class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width:48px; height:48px; text-decoration:none;" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://github.com/" class="bg-dark text-white rounded-circle d-flex align-items-center justify-content-center" style="width:48px; height:48px; text-decoration:none;" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="mailto:barbade21@gmail.com" class="bg-danger text-white rounded-circle d-flex align-items-center justify-content-center" style="width:48px; height:48px; text-decoration:none;" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="bg-white rounded-3 shadow p-3 h-100">
+          <h3 class="fs-3 fw-semibold mb-4">Send Message</h3>
+          <form>
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="firstName" class="form-label fs-6 fw-medium">First Name</label>
+                <input type="text" class="form-control" id="firstName" placeholder="John">
+              </div>
+              <div class="col-md-6">
+                <label for="lastName" class="form-label fs-6 fw-medium">Last Name</label>
+                <input type="text" class="form-control" id="lastName" placeholder="Doe">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label fs-6 fw-medium">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="john.doe@example.com">
+            </div>
+            <div class="mb-3">
+              <label for="subject" class="form-label fs-6 fw-medium">Subject</label>
+              <input type="text" class="form-control" id="subject" placeholder="Project Inquiry">
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label fs-6 fw-medium">Message</label>
+              <textarea class="form-control" id="message" rows="5" placeholder="Tell me about your project..."></textarea>
+            </div>
+            <button type="submit" class="btn custom-btn-main w-100">Send Message <i class="bi bi-send"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer-bg py-4 mt-2">
+  <div class="container-xl">
+    <div class="row g-4">
+      <div class="col-md-4 mb-3 mb-md-0">
+        <div class="d-flex align-items-center mb-3">
+          <span class="brand-initials me-2" style="color:var(--tech-cyan);">AB</span>
+          <span class="fw-semibold fs-5">Amol Barbade</span>
+        </div>
+        <p class="mb-0" style="color:#ccc;">Full-stack developer passionate about creating innovative web solutions that make a difference in people's lives.</p>
+      </div>
+      <div class="col-md-4 mb-3 mb-md-0">
+     <!--   <h4 class="fs-6 fw-semibold mb-3">Quick Links</h4>
+        <ul class="list-unstyled">
+          <li><a href="#home" class="footer-link d-block mb-2">Home</a></li>
+          <li><a href="#about" class="footer-link d-block mb-2">About</a></li>
+          <li><a href="#skills" class="footer-link d-block mb-2">Skills</a></li>
+          <li><a href="#projects" class="footer-link d-block mb-2">Projects</a></li>
+          <li><a href="#contact" class="footer-link d-block">Contact</a></li>
+        </ul> -->
+      </div> 
+      <div class="col-md-4">
+        <h4 class="fs-6 fw-semibold mb-2">Get In Touch</h4>
+        <div class="mb-2"><i class="bi bi-envelope-fill text-info me-2"></i> barbade21@gmail.com</div>
+        <div class="mb-2"><i class="bi bi-telephone-fill text-info me-2"></i> +91 8830317804</div>
+        <div class="mb-2"><i class="bi bi-geo-alt-fill text-info me-2"></i> Pune, Maharashtra</div>
+      </div>
+    </div>
+    <div class="border-top border-secondary mt-3 pt-2 text-center" style="color:#ccc;">
+      © 2024 Amol Barbade. All rights reserved. | Built with passion for web development
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS (Popper required for dropdowns/mobiles) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
